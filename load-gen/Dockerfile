@@ -1,7 +1,9 @@
 FROM python:3.9
 
+ARG IP_ADDRESS
+
 # Some default values
-ENV HOST="http://localhost:8080/" \
+ENV HOST="http://$IP_ADDRESS:8080/" \
     SILENT=0 \
     NUM_CLIENTS=1 \
     ERROR=0 \

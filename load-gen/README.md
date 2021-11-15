@@ -2,7 +2,7 @@
 
 This is deliberately not part of docker-compose.yaml to give the option of running the sample application without load. The image is available on Docker Hub but if you want to build your own, run:
 
-```shell
+```shell	
 $ ./build.sh <push>
 ```
 

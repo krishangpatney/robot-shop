@@ -1,16 +1,19 @@
+# Command -> sudo ./load-gen.sh 100 1m 20.117.145.12
+# Command -> sudo ./load-gen.sh NUM_CLIENTS=1 RUMTIME=1h HOSTNAME 
+
 #!/bin/sh
 
 # set -x
 
 # Changing the NUM_CLIENTS environment variable varies the load on the application
 # The bigger the number the more requests, the bigger the load
-NUM_CLIENTS=1
+NUM_CLIENTS=${1:-1} 
 
 # Time to run with NUM_CLIENTS e.g. 1h
-RUN_TIME=0
+RUN_TIME=${2:-1h}
 
 # HOST where Stan's Robot Shop web UI is running
-HOST="http://localhost:8080"
+HOST="http://$3:8080"
 
 # Error flag
 ERROR=0
