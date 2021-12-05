@@ -13,7 +13,7 @@ NUM_CLIENTS=${1:-1}
 RUN_TIME=${2:-1h}
 
 # HOST where Stan's Robot Shop web UI is running
-HOST="http://$3:8080"
+HOST="http://$3"
 
 # Error flag
 ERROR=0
@@ -103,7 +103,7 @@ docker run \
     -e "HOST=$HOST" \
     -e "NUM_CLIENTS=$NUM_CLIENTS" \
     -e "RUN_TIME=$RUN_TIME" \
-    -e "SILENT=$SILENT" \
+    -e "SILENT=1" \
     -e "ERROR=$ERROR" \
     ${REPO}/rs-load:${TAG}
 
